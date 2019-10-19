@@ -4,5 +4,6 @@
 
 #### 零碎的小Demo
 
-- [transition的动画效果](https://github.com/heimamba/xxq-demo/blob/master/css-demo/transition%E5%8A%A8%E7%94%BB.html)
+- [transition的动画代码](https://github.com/heimamba/xxq-demo/blob/master/css-demo/transition%E5%8A%A8%E7%94%BB.html)
+- [animate动画代码](https://github.com/heimamba/xxq-demo/blob/master/css-demo/animation.html)
 
