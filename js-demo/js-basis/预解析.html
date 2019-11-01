@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    // JavaScript 预解析的4种实现方法解析
+
+    // 什么是预解析？  在当前作用域下，js运行之前，会把带有var和function 关键字申明的变量先声明，并在内存中安排好。然后从上至下解析js语句。而且function的声明优先于var声明。
+
+    // 第一种
+    var num = 20;
+    fun()
+
+    function fun() {
+        console.log(num) // undefined
+        var num = 30;
+    }
+    // 预解析里： 先将变量和函数提前， 如下：
+    var num;
+
+    function fun() {
+        var num;
+        console.log(num);
+        num = 30;
+    }
+    num = 20;
+    fun()
+
+
+    // 第二种
+
+    var num = 10;
+
+    function dn() {
+        console.log(num); //undefined
+        var num = 20;
+        console.log(num); //20
+    }
+    dn();
+    //相当于以下代码
+    var num;
+
+    function dn() {
+        var num;
+        console.log(num);
+        num = 20;
+        console.log(num);
+    }
+    num = 10;
+    dn();
+
+
+    // 第三种
+
+    var a = 18;
+    ss();
+
+    function ss() {
+        var b = 9;
+        console.log(a); //undefined
+        console.log(b); //9
+        var a = '123';
+    }
+    //相当于以下代码       
+    var a;
+
+    function ss() {
+        var b;
+        var a;
+        b = 9;
+
+        console.log(a);
+        console.log(b);
+        a = '123';
+    }
+    a = 18;
+    ss();
+
+
+    //    第四种
+
+    aa();
+    console.log(c1); //9
+    console.log(b1); //9
+    console.log(a1); //报错：a1 is not defined       
+    function aa() {
+        var a1 = b1 = c1 = 9;
+        console.log(a1); //9
+        console.log(b1); //9
+        console.log(c1); //9
+    }
+    //相当于
+    function aa() {
+        var a1 = b1 = c1 = 9; //相当于 var a=9;b=9,c=9
+        var a1;
+        a1 = b1 = c1 = 9;
+
+        console.log(a1);
+        console.log(b1);
+        console.log(c1)
+    }
+    aa();
+    console.log(c1);
+    console.log(b1);
+    console.log(a1);
+</script>

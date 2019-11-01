@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    // 利用对象字面量创建对象
+    var dog = {
+        name: "可可",
+        type: "阿拉斯加犬",
+        age: "5岁",
+        color: "棕红色",
+        skills: "bark,showFilm",
+        sayHi: function() {
+            console.log("nisss")
+        }
+    }
+    dog.sayHi()
+
+
+// 利用new object 创建对象
+    var people = new Object();
+    people.name = "鸣人";
+    people.age = 19;
+    people.sexy = "男";
+    people.skill = "影分身术",
+    people.sayHi = function() {
+        console.log('hi')
+    }
+    console.log(people.name)
+    console.log(people['age'])
+    people.sayHi()
+
+
+    // 利用构造函数创建对象
+     function Obj(uname, age, sexy) {
+        this.name = uname;
+        this.age = age;
+        this.sexy = sexy;
+    }
+    var ldh = new Obj("ldh", 18, "男")
+    console.log(typeof ldh);
+    
+    console.log(ldh.name)
+    console.log(ldh.age);
+    
+</script>
